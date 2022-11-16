@@ -1,0 +1,38 @@
+.mplayer_settings, .mplayer_playlist, .mplayer_subtitles {
+  position: relative;
+}
+
+.mplayer_settingsPanel {
+  position: absolute;
+  right: -50%;
+  bottom: 50px;
+  white-space: nowrap;
+  border-radius: 2px;
+  background: rgba(28, 28, 28, 0.5);
+  padding: 7px 0;
+  z-index: 2;
+  backdrop-filter: blur(var(--blur));
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 150ms ease-in-out;
+  max-height: 200px;
+  overflow: auto;
+}
+
+.mplayer_settingsItem {
+  text-align: center;
+  cursor: pointer;
+  padding: .15rem 1.5rem;
+  margin: .1rem .1rem;
+}
+
+.mplayer_settingsItem.selected {
+  border-left: 2px solid $themeColor;
+  color: $themeColor;
+  background-color: rgb(0, 0, 0);
+}
+
+.mplayer_settingsItem:hover {
+  box-shadow: 0 0 3px #000;
+  background-color: rgb(0, 0, 0);
+}

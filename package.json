@@ -1,0 +1,32 @@
+{
+  "name": "mplayer",
+  "version": "0.0.1",
+  "description": "What a colorful, lovely and powerful html5 video player!!",
+  "main": "./src/js/mplayer.js",
+  "scripts": {
+    "serve": "webpack serve --config webpack.dev.js",
+    "build": "webpack build --config webpack.prod.js"
+  },
+  "author": "Nick Hsu",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "git-revision-webpack-plugin": "^5.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.19.4",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "ejs-loader": "^0.5.0",
+    "html-webpack-plugin": "^5.5.0",
+    "path": "^0.12.7",
+    "postcss-loader": "^7.0.1",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  }
+}

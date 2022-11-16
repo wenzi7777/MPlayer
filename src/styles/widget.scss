@@ -1,0 +1,59 @@
+/* widget styles START */
+
+.mplayer_switch {
+  position: relative;
+  background-color: white;
+  width: 30px;
+  height: 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.mplayer_switchHandle {
+  position: absolute;
+  top: -25%;
+  width: 15px;
+  height: 15px;
+  background-color: $themeColor;
+  box-shadow: 0 0 3px $themeColor;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: left 50ms ease-in-out, right 50ms ease-in-out, background-color 50ms ease-in-out;
+}
+
+.mplayer_switch[data-mplayer-switch="on"] {
+  background-color: $themeColor;
+}
+
+.mplayer_switch[data-mplayer-switch="on"] .mplayer_switchHandle {
+  right: 0;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
+}
+
+.mplayer_switch[data-mplayer-switch="off"] .mplayer_switchHandle {
+  left: 0;
+}
+
+.mplayer_viewMore, .mplayer_checkBox {
+  display: inline-block;
+  height: 100%;
+  align-content: center;
+}
+
+.mplayer_checkBox_checkedIcon, .mplayer_checkBox_uncheckedIcon {
+  display: none;
+}
+
+.mplayer_checkBox[data-mplayer-checkbox="checked"] .mplayer_checkBox_checkedIcon {
+  display: block;
+}
+
+.mplayer_checkBox[data-mplayer-checkbox="unchecked"] .mplayer_checkBox_uncheckedIcon {
+  display: block;
+}
+
+[data-mplayer-playback-rates-group]{
+  text-align: left;
+}
+
+/* widget styles END */

@@ -1,0 +1,20 @@
+.mplayer_contextMenu {
+  position: absolute;
+  background-color: rgba(0, 0, 0, .5);
+  border-radius: 3px;
+  flex-direction: column;
+  padding: .25rem 0;
+  z-index: 1;
+  backdrop-filter: blur(var(--blur));
+}
+
+.mplayer_contextMenuItem {
+  padding: .25rem 2rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.mplayer_contextMenuItem:hover {
+  background-color: black;
+  box-shadow: 0 0 3px black;
+}

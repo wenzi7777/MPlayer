@@ -1,0 +1,60 @@
+/* icon or button display control START */
+
+.mplayer_sizer.paused .mplayer_pauseIcon {
+  display: none;
+}
+
+.mplayer_sizer:not(.paused) .mplayer_playIcon {
+  display: none;
+}
+
+.mplayer_sizer.fullscreen .mplayer_fullscreenIcon {
+  display: none;
+}
+
+.mplayer_sizer:not(.fullscreen) .mplayer_exitFullscreenIcon {
+  display: none;
+}
+
+.mplayer_sizer.miniPlayer .mplayer_miniPlayerIcon {
+  display: none;
+}
+
+.mplayer_sizer:not(.miniPlayer) .mplayer_exitMiniPlayerIcon {
+  display: none;
+}
+
+.mplayer_sizer.theater .mplayer_theaterModeIcon {
+  display: none;
+}
+
+.mplayer_sizer:not(.theater) .mplayer_exitTheaterModeIcon {
+  display: none;
+}
+
+.mplayer_sizer:not(.next) .mplayer_playNextButton {
+  display: none;
+}
+
+.mplayer_sizer:not(.previous) .mplayer_playPreviousButton {
+  display: none;
+}
+
+.mplayer_sizer[data-mplayer-volume-level="high"] .mplayer_volumeUpIcon {
+  display: block;
+}
+
+.mplayer_sizer[data-mplayer-volume-level="low"] .mplayer_volumeDownIcon {
+  display: block;
+}
+
+.mplayer_sizer[data-mplayer-volume-level="muted"] .mplayer_mutedIcon {
+  display: block;
+}
+
+.mplayer_sizer.subtitles .mplayer_subtitlesButton {
+  border-bottom: 3px solid rgba(0, 0, 0, 0);
+  box-shadow: 0 3px 0 $themeColor;
+}
+
+/* icon or button display control END */

@@ -1,0 +1,217 @@
+.mplayer_controlsContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+.mplayer_controlsContainer::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, .75), transparent);
+  width: 100%;
+  aspect-ratio: 6 / 1;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.mplayer_sizer:hover .mplayer_controlsContainer,
+.mplayer_sizer:focus-within .mplayer_controlsContainer,
+.mplayer_sizer.paused .mplayer_controlsContainer {
+  opacity: 1;
+}
+
+.mplayer_controlsContainer .mplayer_tools {
+  display: flex;
+  gap: .5rem;
+  padding: .25rem;
+  align-items: center;
+}
+
+.mplayer_controlsContainer .mplayer_tools button {
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 0;
+  height: 30px;
+  width: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: .85;
+  transition: opacity 150ms ease-in-out;
+}
+
+.mplayer_controlsContainer .mplayer_tools button:hover {
+  opacity: 1;
+}
+
+.mplayer_volume {
+  display: flex;
+  align-items: center;
+}
+
+.mplayer_volumeSlider {
+  width: 0;
+  transform-origin: left;
+  transform: scale(0);
+  transition: width 150ms ease-in-out, transform 150ms ease-in-out, opacity 150ms ease-in-out;
+  opacity: 0;
+  color: white;
+  background-color: white;
+  -webkit-appearance: none;
+  height: 3px;
+  border-radius: 3px;
+}
+
+.mplayer_volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: white;
+  color: white;
+}
+
+.mplayer_volume:hover .mplayer_volumeSlider,
+.mplayer_volumeSlider:focus-within {
+  width: 80px;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.mplayer_duration {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  flex-grow: 1;
+  font-weight: 100;
+  font-size: .75rem;
+}
+
+.mplayer_volumeUpIcon,
+.mplayer_volumeDownIcon,
+.mplayer_mutedIcon {
+  display: none;
+}
+
+.mplayer_sizer.theater,
+.mplayer_sizer.fullscreen {
+  max-width: initial;
+  width: 100%;
+}
+
+.mplayer_sizer.theater {
+  max-height: 90vh;
+}
+
+.mplayer_sizer.fullscreen {
+  max-height: 100vh;
+}
+
+.mplayer_timelineContainer {
+  height: 6px;
+  margin-inline: .5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.mplayer_timeline {
+  background-color: rgba(100, 100, 100, .5);
+  height: 3px;
+  width: 100%;
+  position: relative;
+  transition: height 100ms ease-in-out;
+}
+
+.mplayer_sizer.scrubbing .mplayer_previewImage,
+.mplayer_timelineContainer:hover .mplayer_previewImage {
+  display: block;
+}
+
+.mplayer_sizer:not(.images) .mplayer_previewImage {
+  display: none !important;
+}
+
+.mplayer_timelineContainer:hover .mplayer_timeline {
+  height: 100%;
+}
+
+.mplayer_thumbIndicator {
+  --scale: 0;
+  position: absolute;
+  transform: translateX(-50%) scale(var(--scale));
+  height: 200%;
+  top: -50%;
+  left: calc(var(--mplayer-played-position) * 100%);
+  background-color: $themeColor;
+  box-shadow: 0 0 16px $themeColor;
+  border-radius: 50%;
+  transition: transform 150ms ease-in-out;
+  aspect-ratio: 1 / 1;
+}
+
+.mplayer_timelineContainer:hover .mplayer_thumbIndicator {
+  --scale: 1;
+}
+
+/* preview timeline */
+.mplayer_previewTimeline {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  /*background-color: rgba(190, 190, 190, 0.9);*/
+  right: calc(100% - var(--mplayer-preview-position, .0) * 100%);
+  /*display: none;*/
+}
+
+/* buffered timeline */
+.mplayer_timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(150, 150, 159, .9);
+  right: calc(100% - var(--mplayer-buffered-position) * 100%);
+  /*display: none;*/
+}
+
+/* played timeline */
+.mplayer_timeline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: $lightThemeColor;
+  right: calc(100% - var(--mplayer-played-position) * 100%);
+  /*display: none;*/
+}
+
+.mplayer_previewImage {
+  position: absolute;
+  left: calc(var(--mplayer-preview-image-position) * 100%);
+  bottom: 30px;
+  width: 200px;
+  height: 115px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  transform: translate(-50%);
+  border-radius: 5px;
+  box-shadow: 0 0 0 3px $themeColor;
+  backdrop-filter: blur(.5vw);
+  display: none;
+}
+
+.mplayer_screenshotSuit {
+  display: none;
+}

@@ -1,0 +1,58 @@
+.mplayer_noticeList {
+  position: absolute;
+  left: 20px;
+  bottom: 60px;
+  pointer-events: none;
+}
+
+.mplayer_notice {
+  max-width: 300px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, .5);
+  backdrop-filter: blur(.5vw);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  color: white;
+  padding: 5px 10px;
+  margin: 10px 0;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, .5);
+  transition: opacity 250ms ease-in-out;
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.mplayer_notice.enter {
+  animation: enter 250ms;
+}
+
+.mplayer_notice.leave {
+  animation: leave 250ms;
+}
+
+@keyframes enter {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes leave {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(50px);
+    opacity: 0;
+    display: none;
+  }
+}

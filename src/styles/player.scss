@@ -1,0 +1,22 @@
+.mplayer_sizer {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  margin-inline: auto;
+  background-color: black;
+  font-family: sans-serif;
+  --blur: .15vw
+}
+
+.mplayer_sizer.hideControls {
+  cursor: none;
+  .mplayer_controlsContainer {
+    display: none;
+  }
+}
+
+.mplayer_video {
+  width: 100%;
+}

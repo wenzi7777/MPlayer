@@ -1,0 +1,10 @@
+<div class="mplayer_infoTagContainer">
+    <% if (data.type === 'info') { %>
+        <span>[INFO]</span>
+    <% } else if (data.type === 'success') { %>
+        <span>[SUCCESS]</span>
+    <% } else { %>
+        <span>[ERROR]</span>
+    <% } %>
+    <%= data.contents %>
+</div>

@@ -1,0 +1,39 @@
+$themeColor: rgb(57, 197, 187);
+$lightThemeColor: rgba(57, 197, 187, .9);
+
+.mplayer_whiteColor {
+  color: white;
+}
+
+.mplayer_mikuColor {
+  color: #39c5bb;
+}
+
+.mplayer_backgroundWhite {
+  background-color: white;
+}
+
+.mplayer_backgroundTheme {
+  background-color: $themeColor;
+}
+
+.mplayer_backgroundMask {
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.mplayer_noBackground {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.mplayer_backgroundError{
+  background-color: tomato;
+}
+
+.mplayer_infoTag, .mplayer_successTag, .mplayer_errorTag {
+  margin: 0 10px;
+}
+
+.mplayer_fadeLeave {
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}

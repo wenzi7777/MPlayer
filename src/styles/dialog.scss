@@ -1,0 +1,59 @@
+.mplayer_dialog {
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  width: 50%;
+  max-height: 80%;
+  overflow: scroll;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  z-index: 2;
+  backdrop-filter: blur(var(--blur));
+}
+
+.mplayer_dialogTitle {
+  height: 10%;
+  font-weight: 800;
+  text-align: center;
+  transition: background-color 150ms ease-in-out;
+}
+
+.mplayer_detailsList {
+  flex-grow: 1;
+}
+
+.mplayer_dialogActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: .25rem;
+}
+
+.mplayer_detailsItem {
+  display: flex;
+  white-space: nowrap;
+  overflow: auto;
+  margin-inline: .5rem;
+}
+
+.mplayer_detailsItemTitle, .mplayer_detailsItemDate {
+  display: inline-block;
+}
+
+.mplayer_dialogButton {
+  outline: none;
+  background: none;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  opacity: .85;
+  transition: opacity 150ms ease-in-out;
+}
+
+.mplayer_dialogButton:hover {
+  opacity: 1;
+}

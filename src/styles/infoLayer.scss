@@ -1,0 +1,70 @@
+.mplayer_infoLayer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+  cursor: not-allowed;
+  display: flex;
+  flex-direction: column;
+  transition: all 150ms ease-in-out;
+}
+
+.mplayer_infoTitle {
+  font-weight: 800;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+  height: 30%;
+  margin: 0 auto;
+}
+
+.mplayer_infoContents {
+  flex-grow: 1;
+  padding: .5rem 1rem;
+}
+
+@keyframes mplayer_loadingIcon_rotate {
+  0% {
+    rotate: 0deg;
+  }
+
+  12.5% {
+    rotate: 45deg;
+  }
+
+  25% {
+    rotate: 90deg;
+  }
+
+  37.5% {
+    rotate: 135deg;
+  }
+
+  50% {
+    rotate: 180deg;
+  }
+
+  62.5% {
+    rotate: 225deg;
+  }
+
+  75% {
+    rotate: 270deg;
+  }
+
+  87.5% {
+    rotate: 315deg;
+  }
+
+  100% {
+    rotate: 360deg;
+  }
+}
+
+.mplayer_loadingIcon {
+  animation: mplayer_loadingIcon_rotate 1s infinite;
+}
