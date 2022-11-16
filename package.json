@@ -1,7 +1,7 @@
 {
-  "name": "mplayer",
+  "name": "@wenzi7777/mplayer",
   "version": "0.0.1",
-  "description": "What a colorful, lovely and powerful html5 video player!!",
+  "description": "What a colorful, powerful and lovely html5 video player!!",
   "main": "./src/js/mplayer.js",
   "scripts": {
     "serve": "webpack serve --config webpack.dev.js",
@@ -29,5 +29,21 @@
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.1"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wenzi7777/MPlayer.git"
+  },
+  "keywords": [
+    "player",
+    "html5",
+    "video"
+  ],
+  "bugs": {
+    "url": "https://github.com/wenzi7777/MPlayer/issues"
+  },
+  "homepage": "https://github.com/wenzi7777/MPlayer#readme"
 }
