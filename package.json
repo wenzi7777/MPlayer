@@ -1,6 +1,6 @@
 {
   "name": "@wenzi7777/mplayer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "What a colorful, powerful and lovely html5 video player!!",
   "main": "./src/js/mplayer.js",
   "scripts": {
