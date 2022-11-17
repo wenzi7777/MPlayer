@@ -5,7 +5,7 @@ MPlayer is a powerful, colorful and lovely html5 video player.
 
 [![npm](https://img.shields.io/npm/dt/@wenzi7777/mplayer)](https://www.npmjs.com/package/@wenzi7777/mplayer)
 [![npm](https://img.shields.io/npm/l/@wenzi7777/mplayer)](https://github.com/wenzi7777/MPlayer/blob/master/LICENSE)
-[![size](https://badge-size.herokuapp.com/MoePlayer/DPlayer/master/dist/DPlayer.min.js?compression=gzip&style=flat-square)](https://github.com/MoePlayer/DPlayer/tree/master/dist)
+[![](https://data.jsdelivr.com/v1/package/npm/@wenzi7777/mplayer/badge?style=rounded)](https://cdn.jsdelivr.net/npm/@wenzi7777/mplayer@latest)
 
 # ![Preview](./docs/preview.png)
 
@@ -73,7 +73,7 @@ npm install --save @wenzi7777/mplayer
 
 ```html
 
-<script src="https://cdn.jsdelivr.net/wenzi7777/mplayer"></script>
+<script src="https://cdn.jsdelivr.net/npm/@wenzi7777/mplayer@latest"></script>
 <div id="mplayer"></div>
 <script>
   let mplayer = new MPlayer(document.querySelector('#mplayer'), {
