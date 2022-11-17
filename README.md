@@ -3,6 +3,10 @@
 
 MPlayer is a powerful, colorful and lovely html5 video player.
 
+[![npm](https://img.shields.io/npm/dt/@wenzi7777/mplayer)](https://www.npmjs.com/package/@wenzi7777/mplayer)
+[![npm](https://img.shields.io/npm/l/@wenzi7777/mplayer)](https://github.com/wenzi7777/MPlayer/blob/master/LICENSE)
+[![size](https://badge-size.herokuapp.com/MoePlayer/DPlayer/master/dist/DPlayer.min.js?compression=gzip&style=flat-square)](https://github.com/MoePlayer/DPlayer/tree/master/dist)
+
 # ![Preview](./docs/preview.png)
 
 ## Try it! 

@@ -156,11 +156,14 @@ class SettingsPanel {
             contents: `${floatPanelEjsTemplate()} ${this.mplayer.translate.trans('resolutions')} ${viewMore_htmlCode}`
         })
 
-        // inject template code
-        this.settingsPanel.insertAdjacentHTML('beforeend', floatPanelItem_htmlCode)
-
         // hls resolutions
         if (this.mplayer.playlist.getCurrentVideoObject().type === 'hls') {
+            // inject template code
+            this.resolutions = this.mplayer.plugins.hls.levels
+            if(this.resolutions.length <= 1) {
+                return;
+            }
+            this.settingsPanel.insertAdjacentHTML('beforeend', floatPanelItem_htmlCode)
             let checkbox_htmlCode = checkboxEjsTemplate({
                 status: this.mplayer.plugins.hls.autoLevelEnabled ? 'checked' : 'unchecked'
             })
@@ -172,7 +175,6 @@ class SettingsPanel {
             // inject template code
             this.settingsPanel.insertAdjacentHTML('beforeend', floatPanelItem_htmlCode)
 
-            this.resolutions = this.mplayer.plugins.hls.levels
             // inject buttons code
             let floatPanelItems_htmlCode = ''
             this.resolutions.forEach(item => {
@@ -219,6 +221,12 @@ class SettingsPanel {
 
         // dash resolutions
         if (this.mplayer.playlist.getCurrentVideoObject().type === 'dash') {
+            // inject template code
+            this.resolutions = this.mplayer.plugins.dash.getBitrateInfoListFor('video')
+            if(this.resolutions.len <= 1) {
+                return;
+            }
+            this.settingsPanel.insertAdjacentHTML('beforeend', floatPanelItem_htmlCode)
             let checkbox_htmlCode = checkboxEjsTemplate({
                 status: this.mplayer.plugins.dash.getSettings().streaming.abr.autoSwitchBitrate.video ? 'checked' : 'unchecked'
             })
@@ -229,7 +237,6 @@ class SettingsPanel {
             })
             // inject template code
             this.settingsPanel.insertAdjacentHTML('beforeend', floatPanelItem_htmlCode)
-            this.resolutions = this.mplayer.plugins.dash.getBitrateInfoListFor('video')
             // inject buttons code
             let floatPanelItems_htmlCode = ''
             this.resolutions.forEach(item => {
