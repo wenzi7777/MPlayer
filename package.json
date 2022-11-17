@@ -2,7 +2,7 @@
   "name": "@wenzi7777/mplayer",
   "version": "0.0.3",
   "description": "What a colorful, powerful and lovely html5 video player!!",
-  "main": "./src/js/mplayer.js",
+  "main": "dist/mplayer.bundle.min.js",
   "scripts": {
     "serve": "webpack serve --config webpack.dev.js",
     "build": "webpack build --config webpack.prod.js"
