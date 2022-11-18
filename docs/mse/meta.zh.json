@@ -1,0 +1,6 @@
+{
+  "hls": "hls.js",
+  "dash": "dash.js",
+  "flv": "flv.js",
+  "native": "原生"
+}

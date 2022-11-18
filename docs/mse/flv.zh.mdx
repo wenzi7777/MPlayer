@@ -1,0 +1,25 @@
+## 使用FLV插件
+
+**若您需要播放flv视频，您需要在引入MPlayer前先引入flv.js库**
+
+**[flv.js](https://github.com/bilibili/flv.js)**
+
+使用示例
+```html
+<script src="https://cdn.jsdelivr.net/npm/flv.js@1.6.2/dist/flv.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@wenzi7777/mplayer@latest/dist/mplayer.bundle.min.js"></script>
+<div id={'mplayer'}></div>
+<script>
+    let options = {
+        videos: [
+            {
+                title: 'video title',
+                src: 'video src.flv'
+            }
+        ]
+    }
+    const mplayer = new MPlayer(document.querySelector('#mplayer'), options)
+</script>
+```
+
+flv视频**不支持**多分辨率

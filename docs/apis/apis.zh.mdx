@@ -1,0 +1,41 @@
+## API列表
+**MPlayer**提供了许多API供开发者使用，您可以通过 **MPlayer实例名**.apis\[API名称\](参数)调用
+
+|名称|参数|返回值|描述|调用示例|
+|:--:|:--:|:--:|:--:|:--:|
+|play|void|void|播放视频|mplayer.apis.play()|
+|pause|void|void|暂停视频|mplayer.apis.pause()|
+|togglePlayPause|void|void|播放/暂停视频|togglePlayPause.apis.play()|
+|reload|void|void|重新载入播放器|mplayer.apis.reload()|
+|mute|void|void|静音视频|mplayer.apis.mute()|
+|unmute|void|void|取消静音视频|mplayer.apis.unmute()|
+|toggleMute|void|void|静音/取消静音视频|mplayer.apis.toggleMute()|
+|skip|time:Number|void|调整视频进度|mplayer.apis.skip(-5)|
+|enterPiP|void|void|进入画中画（小窗口）模式|mplayer.apis.enterPiP()|
+|exitPiP|void|void|退出画中画（小窗口）模式|mplayer.apis.exitPiP()|
+|toggleMiniPlayer|void|void|进入/退出画中画（小窗口）模式|mplayer.apis.toggleMiniPlayer()|
+|enterFullscreen|void|void|进入全屏幕|mplayer.apis.enterFullscreen()|
+|exitFullscreen|void|void|退出全屏幕|mplayer.apis.exitFullscreen()|
+|toggleFullscreen|void|void|进入/退出全屏幕|mplayer.apis.toggleFullscreen()|
+|videoResolution|void|Object|获取当前视频清晰度信息|mplayer.apis.videoResolution()|
+|videoURL|void|String|获取当前视频地址|mplayer.apis.videoURL()|
+|buffered|void|String|获取当前已缓存的秒数|mplayer.apis.buffered()|
+|currentTime|void|String|获取当前视频已播放的秒数|mplayer.apis.currentTime()|
+|openLink|link:String|void|打开链接|mplayer.apis.openLink(linkAddress)|
+|toggleInfoPanel|void|void|打开/关闭信息面板|mplayer.apis.toggleInfoPanel()|
+|useMobileStyle|void|void|应用移动端样式|mplayer.apis.useMobileStyle()|
+|cancelMobileStyle|void|void|取消应用移动端样式|mplayer.apis.cancelMobileStyle()|
+|toggleMobileStyle|void|void|应用/取消应用移动端样式|mplayer.apis.toggleMobileStyle()|
+|destroyPlugins|void|void|销毁所有插件实例|mplayer.apis.destroyPlugins()|
+|enterTheaterMode|void|void|进入观影模式|mplayer.apis.enterTheaterMode()|
+|exitTheaterMode|void|void|退出观影模式|mplayer.apis.exitTheaterMode()|
+|toggleTheaterMode|void|void|进入/退出观影模式|mplayer.apis.toggleTheaterMode()|
+|destroy|void|void|销毁播放器实例|mplayer.apis.destroy()|
+|playerContainer|void|void|获取播放器容器|mplayer.apis.playerContainer()|
+|player|void|void|获取播放器video标签|mplayer.apis.player()|
+|playNext|void|void|下一个|mplayer.apis.playNext()|
+|playPrevious|void|void|上一个|mplayer.apis.playPrevious()|
+|publishNotice|contents:String, delay:Number|void|发布通知|mplayer.apis.publishNotice('测试通知', 3000)|
+|showHints|void|void|显示提示|mplayer.apis.showHints()|
+|hideHints|void|void|隐藏提示|mplayer.apis.hideHints()|
+|toggleHints|void|void|显示/隐藏提示|mplayer.apis.toggleHints()|
