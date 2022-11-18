@@ -1,0 +1,62 @@
+## 事件监听
+
+**MPlayer提供了内建处理事件的API，您可以监听事件，然后加上事件处理函数。**
+
+**api**
+```javascript
+const mplayer = new MPlayer(element, options)
+mplayer.apis.on('eventName', () => {
+    console.log('--')
+})
+```
+
+**video事件**
+- abort
+- canplay
+- canplaythrough
+- contextmenu
+- durationchange
+- emptied
+- ended
+- error
+- loadeddata
+- loadedmetadata
+- loadstart
+- mozaudioavailable
+- pause
+- play
+- playing
+- progress
+- ratechange
+- seeked
+- seeking
+- stalled
+- suspend
+- timeupdate
+- volumechange
+- waiting
+- click
+- enterpictureinpicture
+- leavepictureinpicture
+
+**MPlayer事件**
+- mplayer:reload
+- mplayer:screenshot
+- mplayer:error
+- mplayer:recognizedMediaType
+- mplayer:play
+- mplayer:pause
+- mplayer:muted
+- mplayer:skipFailed
+- mplayer:skipFailed
+- mplayer:skip
+- mplayer:exitPiP
+- mplayer:enterPiP
+- mplayer:enterFullscreen
+- mplayer:exitFullscreen
+- mplayer:openLink
+- mplayer:useMobileStyle
+- mplayer:cancelMobileStyle
+- mplayer:pluginsDestroyed
+- mplayer:exitTheaterMode
+- mplayer:enterTheaterMode

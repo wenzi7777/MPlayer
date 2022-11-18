@@ -209,7 +209,7 @@ class Api {
     }
 
     /**
-     * @description Enter player
+     * @description get player
      */
     player() {
         return this.mplayer.template.mplayer_video
@@ -257,6 +257,15 @@ class Api {
      */
     toggleHints() {
         this.mplayer.toggle()
+    }
+
+    /**
+     * @description Attach event
+     * @param name
+     * @param callback
+     */
+    on(name, callback) {
+        this.mplayer.on(name, callback)
     }
 
 }

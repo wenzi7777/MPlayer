@@ -1,7 +1,6 @@
 export default {
     github: 'https://github.com/wenzi7777/MPlayer',
     docsRepositoryBase: 'https://github.com/wenzi7777/MPlayer-docs',
-    titleSuffix: ' – MPlayer',
     logo: (
         <>
             <span className="mr-2 font-extrabold hidden md:inline">MPlayer</span>
@@ -9,6 +8,7 @@ export default {
     ),
     head: (
         <>
+            <title>MPlayer</title>
             <meta name="msapplication-TileColor" content="#ffffff"/>
             <meta name="theme-color" content="#ffffff"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>

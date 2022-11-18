@@ -1,0 +1,26 @@
+## 使用HLS插件
+
+**若您需要播放m3u8流视频，您需要在引入MPlayer前先引入hls.js库**
+
+**[hls.js](https://github.com/video-dev/hls.js)**
+
+使用示例
+```html
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+<script src="https://cdn.jsdelivr.net/npm/@wenzi7777/mplayer@latest/dist/mplayer.bundle.min.js"></script>
+<div id={'mplayer'}></div>
+<script>
+    let options = {
+        videos: [
+            {
+                title: 'video title',
+                src: 'video src.m3u8'
+            }
+        ]
+    }
+    const mplayer = new MPlayer(document.querySelector('#mplayer'), options)
+</script>
+```
+
+**若您的m3u8的manifests文件支持多分辨率，那么MPlayer会自动读取分辨率，提供给用户选择。**
+![resolutions](../../public/resolutions.png)

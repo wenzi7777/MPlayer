@@ -78,6 +78,7 @@ class MPlayer {
 
         this.on('mplayer:reload', () => {
             this.controller.reload()
+            this.hints.reload()
             this.playlist.refreshPanel()
         })
 

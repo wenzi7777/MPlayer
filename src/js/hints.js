@@ -67,6 +67,11 @@ class Hints {
         }, 1000)
     }
 
+    reload() {
+        this.destroy()
+        this.init()
+    }
+
     destroy() {
         if (this.hintsLayer) {
             this.mplayer.template.mplayer_sizer.removeChild(this.hintsLayer)
