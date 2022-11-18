@@ -11,11 +11,11 @@ MPlayer is a powerful, colorful and lovely html5 video player.
 
 ## Try it! 
 
-- [Demo]('https://mplayer.1205.moe')
+### [Demo]('https://mplayer-docs.vercel.app/')
 
 ## Documentation
-- [中文文档]('https://mplayer.1205.moe/')
-- [English]('https://mplayer.1205.moe/')
+- [中文文档]('https://mplayer-docs.vercel.app/')
+- [English]('https://mplayer-docs.vercel.app/')
 
 
 ## Features
