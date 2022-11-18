@@ -1,5 +1,5 @@
 
-# ![MPlayer](./docs/public/mplayer.png)
+# ![MPlayer](./docs/public/logo.png)
 
 MPlayer is a powerful, colorful and lovely html5 video player.
 
@@ -7,7 +7,7 @@ MPlayer is a powerful, colorful and lovely html5 video player.
 [![npm](https://img.shields.io/npm/l/@wenzi7777/mplayer)](https://github.com/wenzi7777/MPlayer/blob/master/LICENSE)
 [![](https://data.jsdelivr.com/v1/package/npm/@wenzi7777/mplayer/badge?style=rounded)](https://cdn.jsdelivr.net/npm/@wenzi7777/mplayer@latest/dist/mplayer.bundle.min.js)
 
-# ![Preview](./docs/public/preview.png)
+# ![Preview](./docs/public/mplayer.png)
 
 ## Try it! 
 
