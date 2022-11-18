@@ -20,6 +20,9 @@ class MPlayer {
     constructor(element, options) {
         this.player = element
         this.options = formatOptions(options)
+        if(!this.options) {
+            console.error('MPlayer ERROR: video property must be provided!')
+        }
         this.options.player = element
         this.plugins = {}
         this.template = new Template(this.options)

@@ -1,5 +1,4 @@
 const path = require('path')
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const {GitRevisionPlugin} = require('git-revision-webpack-plugin');
 const gitRevisionPlugin = new GitRevisionPlugin();
@@ -81,9 +80,6 @@ module.exports = {
         ],
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: "./__test/__template.ejs"
-        }),
         new webpack.DefinePlugin({
             MPLAYER_VERSION: `"${require('./package.json').version}"`,
             GIT_HASH: JSON.stringify(gitRevisionPlugin.version()),

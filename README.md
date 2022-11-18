@@ -1,13 +1,13 @@
 
-# ![MPlayer](./docs/mplayer.png)
+# ![MPlayer](./MPlayer-docs/public/mplayer.png)
 
 MPlayer is a powerful, colorful and lovely html5 video player.
 
 [![npm](https://img.shields.io/npm/dt/@wenzi7777/mplayer)](https://www.npmjs.com/package/@wenzi7777/mplayer)
 [![npm](https://img.shields.io/npm/l/@wenzi7777/mplayer)](https://github.com/wenzi7777/MPlayer/blob/master/LICENSE)
-[![](https://data.jsdelivr.com/v1/package/npm/@wenzi7777/mplayer/badge?style=rounded)](https://cdn.jsdelivr.net/npm/@wenzi7777/mplayer@latest)
+[![](https://data.jsdelivr.com/v1/package/npm/@wenzi7777/mplayer/badge?style=rounded)](https://cdn.jsdelivr.net/npm/@wenzi7777/mplayer@latest/dist/mplayer.bundle.min.js)
 
-# ![Preview](./docs/preview.png)
+# ![Preview](./MPlayer-docs/public/preview.png)
 
 ## Try it! 
 
@@ -62,7 +62,7 @@ npm run build
 
 ### Installation
 
-Prepackaged builds are included [with each release](https://github.com/wenzi7777/MPlayer/releases). Or install the hls.js as a dependency
+Prepackaged builds are included [with each release](https://github.com/wenzi7777/MPlayer/releases). Or install the MPlayer.js as a dependency
 of your project:
 
 ```sh
@@ -73,37 +73,14 @@ npm install --save @wenzi7777/mplayer
 
 ```html
 
-<script src="https://cdn.jsdelivr.net/npm/@wenzi7777/mplayer@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@wenzi7777/mplayer@latest/dist/mplayer.bundle.min.js"></script>
 <div id="mplayer"></div>
 <script>
   let mplayer = new MPlayer(document.querySelector('#mplayer'), {
-    lang: 'en_US',
-    tools: ['timeline', 'playPause', 'volumeControl', 'durationViewer', 'screenshot', 'playerSettings', 'enablePlaylist', 'subtitles', 'miniPlayer', 'theaterMode', 'fullscreen'],
-    hotkey: true,
-    preload: false,
-    volume: 1,
-    playbackRates: [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2],
-    index: 0,
-    infoPanel: ['basicVideoInfo', 'playerFPS', 'videoURL', 'connectionStatus', 'date', 'playerInfo'],
-    contextMenu: [
-      {
-        title: 'Player Info',
-        targetFunction: 'toggleInfoPanel'
-      }
-    ],
     videos: [
       {
-        title: '?',
-        src: '?',
-        tracks: [
-          {
-            srclang: 'en',
-            src: '?',
-            label: "English(USA)",
-            kind: "captions"
-          },
-        ],
-        images: ['?']
+        title: '?', // required
+        src: '?' // required
       }
     ]
   })

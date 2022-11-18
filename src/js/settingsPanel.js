@@ -31,7 +31,7 @@ class SettingsPanel {
         this.insertBasicPanel()
 
         // if enabled hints
-        if (this.mplayer.options.hints) {
+        if (this.mplayer.options.hints.enabled) {
             this.initHintsItem()
         }
 
