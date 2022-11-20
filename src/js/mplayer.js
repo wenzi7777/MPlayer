@@ -123,9 +123,14 @@ class MPlayer {
         switch (this.playlist.getCurrentVideoObject().type) {
             case 'hls':
                 try {
-                    if (!window.Hls.isSupported()) {
+                    if(!window.Hls) {
                         // error
                         this.events.trigger('mplayer:error', 'cant-find-hlsjs')
+                        return;
+                    }
+                    if (!window.Hls.isSupported()) {
+                        // error
+                        this.events.trigger('mplayer:error', 'browser-not-supported-hlsjs')
                         return;
                     }
                     let hls = new window.Hls()
