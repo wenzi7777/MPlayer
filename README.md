@@ -43,7 +43,7 @@ Spotlight:
 
 ```sh
 git clone https://github.com/wenzi7777/MPlayer.git
-cd Mplayer
+cd MPlayer
 npm i
 npm run build
 ```
