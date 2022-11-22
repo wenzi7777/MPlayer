@@ -59,7 +59,7 @@ const formatOptions = (options) => {
             {
                 title: 'MPlayer',
                 targetFunction: 'openLink',
-                params: `https://www.1205.moe/mplayer`
+                params: `https://mplayer.1205.moe/`
             },
             {
                 title: 'Player Info',
