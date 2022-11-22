@@ -151,6 +151,11 @@ class MPlayer {
                         this.events.trigger('mplayer:error', 'cant-find-dashjs')
                         return;
                     }
+                    if (!window.dashjs.supportsMediaSource()) {
+                        // error
+                        this.events.trigger('mplayer:error', 'browser-not-supported-dashjs')
+                        return;
+                    }
                     let dash = dashjs.MediaPlayer().create()
                     this.plugins.dash = dash
                     dash.initialize(this.template.mplayer_video, this.playlist.getCurrentVideoObject().src, this.options.autoplay)
@@ -165,6 +170,11 @@ class MPlayer {
                     if (!window.flvjs) {
                         // error
                         this.events.trigger('mplayer:error', 'cant-find-flvjs')
+                        return;
+                    }
+                    if (!window.flvjs.isSupported()) {
+                        // error
+                        this.events.trigger('mplayer:error', 'browser-not-supported-flvjs')
                         return;
                     }
                     let flv = window.flvjs.createPlayer({

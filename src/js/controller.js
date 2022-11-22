@@ -82,7 +82,6 @@ class Controller {
             this.initSubtitles()
         }
 
-
         // if used player settings tool
         if (this.mplayer.options.tools.includes('playerSettings')) {
             this.initPlayerSettings()

@@ -10,22 +10,6 @@ class SettingsPanel {
         this.init()
     }
 
-    // functions:
-    // 1.hints 2.playback rate 3.video qualities
-
-    // hints cant be disabled by default when mplayer is initialized.
-    // if hints are enabled, it can be close or open in the settings panel.
-    // if hints are disabled, the switch of hints will not be added to the DOM
-
-    // playback rate will be an array of the OPTIONS object.
-    // init function will read the value, then rendered defined selections
-
-    // video qualities:
-    // other: see if the video object has .qualities value. change the src then reload mplayer
-    // hls: use hls.js build-in functions
-    // dash: use dash.js build-in functions
-    // flv: use flv.js build-in functions
-
     init() {
         // basic panel
         this.insertBasicPanel()
@@ -223,7 +207,7 @@ class SettingsPanel {
         if (this.mplayer.playlist.getCurrentVideoObject().type === 'dash') {
             // inject template code
             this.resolutions = this.mplayer.plugins.dash.getBitrateInfoListFor('video')
-            if(this.resolutions.len <= 1) {
+            if(this.resolutions.length <= 1) {
                 return;
             }
             this.settingsPanel.insertAdjacentHTML('beforeend', floatPanelItem_htmlCode)

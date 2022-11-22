@@ -52,7 +52,9 @@ const translations = {
         'subtitle-selected': 'Subtitle selected',
         'not-provide-subtitles': 'Not provide subtitles',
         'subtitles-closed': 'Subtitles closed',
-        'browser-not-supported-hlsjs': 'This browser do not support HLS.js'
+        'browser-not-supported-hlsjs': 'This browser do not support HLS.js',
+        'browser-not-supported-dashjs': 'This browser do not support DASH.js',
+        'browser-not-supported-flvjs': 'This browser do not support FLV.js'
     },
     zh_CN: {
         'untitled': '无标题',
@@ -92,7 +94,9 @@ const translations = {
         'subtitle-selected': '已选择字幕',
         'not-provide-subtitles': '未提供字幕',
         'subtitles-closed': '字幕已关闭',
-        'browser-not-supported-hlsjs': '这个播放器不支持HLS.js'
+        'browser-not-supported-hlsjs': '这个浏览器不支持HLS.js',
+        'browser-not-supported-dashjs': '这个浏览器不支持DASH.js',
+        'browser-not-supported-flvjs': '这个浏览器不支持FLV.js'
     },
     zh_TW: {
         'untitled': '無標題',
@@ -132,7 +136,9 @@ const translations = {
         'subtitle-selected': '已選擇字幕',
         'not-provide-subtitles': '沒有可用的字幕',
         'subtitles-closed': '字幕已關閉',
-        'browser-not-supported-hlsjs': '此播放器不支援HLS.js'
+        'browser-not-supported-hlsjs': '此瀏覽器不支援HLS.js',
+        'browser-not-supported-dashjs': '此瀏覽器不支援DASH.js',
+        'browser-not-supported-flvjs': '此瀏覽器不支援FLV.js'
     }
 };
 
