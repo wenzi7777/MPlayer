@@ -51,12 +51,12 @@ class Subtitles {
     }
 
     closeAllSubtitles() {
-        this.toggleSubtitlesClass()
         if (this.textTracks) {
             for (let i = 0; i < this.textTracks.length; i++) {
                 this.textTracks[i].mode = 'disabled'
             }
         }
+        this.toggleSubtitlesClass()
     }
 
     showSubtitles(label) {
