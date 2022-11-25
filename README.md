@@ -15,7 +15,7 @@ MPlayer is a powerful, colorful and lovely html5 video player.
 
 ## Documentation
 - [中文文档](https://mplayer.1205.moe/)
-- [English](https://mplayer.1205.moe/)
+- [English](https://mplayer.1205.moe/en)
 
 
 ## Features
