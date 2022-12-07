@@ -18,8 +18,7 @@ MPlayer is a powerful, colorful and lovely html5 video player.
 - [English](https://mplayer.1205.moe/en)
 
 
-## Features
-### MPlayer supports:
+## MPlayer supports:
 Streaming formats:
 - [HLS](https://github.com/video-dev/hls.js)
 - [MPEG DASH](https://github.com/Dash-Industry-Forum/dash.js)
@@ -30,7 +29,7 @@ Media formats:
 - WebM 
 - Ogg Theora Vorbis
 
-Spotlight: 
+## Features
 - Subtitle switching 
 - Playlist support, including play next, play previous, playlist panel.
 - Screenshot 
@@ -38,6 +37,7 @@ Spotlight:
 - Quality switching 
 - Hints 
 - Preview images
+- Spotlight effect.
 
 ## Build you own one
 
