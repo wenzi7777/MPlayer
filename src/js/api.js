@@ -256,7 +256,28 @@ class Api {
      * @description Toggle hints
      */
     toggleHints() {
-        this.mplayer.toggle()
+        this.mplayer.hints.toggle()
+    }
+
+    /**
+     * @description Show hints
+     */
+    showSpotlight() {
+        this.mplayer.spotlight.show()
+    }
+
+    /**
+     * @description Hide hints
+     */
+    hideSpotlight() {
+        this.mplayer.spotlight.hide()
+    }
+
+    /**
+     * @description Toggle hints
+     */
+    toggleSpotlight() {
+        this.mplayer.spotlight.toggle()
     }
 
     /**

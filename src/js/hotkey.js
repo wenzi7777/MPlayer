@@ -21,26 +21,33 @@ class Hotkey {
                 switch (e.key.toLowerCase()) {
                     case " ":
                     case "k":
+                        e.preventDefault()
                         this.mplayer.togglePlayPause()
                         break
                     case "f":
+                        e.preventDefault()
                         this.mplayer.toggleFullScreen()
                         break
                     case "t":
+                        e.preventDefault()
                         this.mplayer.toggleTheaterMode()
                         break
                     case "i":
+                        e.preventDefault()
                         this.mplayer.toggleMiniPlayer()
                         break
                     case "m":
+                        e.preventDefault()
                         this.mplayer.toggleMute()
                         break
                     case "arrowleft":
                     case "j":
+                        e.preventDefault()
                         this.mplayer.skip(-5)
                         break
                     case "arrowright":
                     case "l":
+                        e.preventDefault()
                         this.mplayer.skip(5)
                         break
                 }

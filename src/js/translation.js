@@ -54,7 +54,10 @@ const translations = {
         'subtitles-closed': 'Subtitles closed',
         'browser-not-supported-hlsjs': 'This browser do not support HLS.js',
         'browser-not-supported-dashjs': 'This browser do not support DASH.js',
-        'browser-not-supported-flvjs': 'This browser do not support FLV.js'
+        'browser-not-supported-flvjs': 'This browser do not support FLV.js',
+        'get-media-resource-type-successfully': 'Get media type successfully',
+        'attempt-to-load-video': 'Try to load video',
+        'spotlight': 'Spotlight Effect'
     },
     zh_CN: {
         'untitled': '无标题',
@@ -96,7 +99,10 @@ const translations = {
         'subtitles-closed': '字幕已关闭',
         'browser-not-supported-hlsjs': '这个浏览器不支持HLS.js',
         'browser-not-supported-dashjs': '这个浏览器不支持DASH.js',
-        'browser-not-supported-flvjs': '这个浏览器不支持FLV.js'
+        'browser-not-supported-flvjs': '这个浏览器不支持FLV.js',
+        'get-media-resource-type-successfully': '获取视频类型成功',
+        'attempt-to-load-video': '尝试载入视频',
+        'spotlight': '聚光灯效果'
     },
     zh_TW: {
         'untitled': '無標題',
@@ -138,7 +144,10 @@ const translations = {
         'subtitles-closed': '字幕已關閉',
         'browser-not-supported-hlsjs': '此瀏覽器不支援HLS.js',
         'browser-not-supported-dashjs': '此瀏覽器不支援DASH.js',
-        'browser-not-supported-flvjs': '此瀏覽器不支援FLV.js'
+        'browser-not-supported-flvjs': '此瀏覽器不支援FLV.js',
+        'get-media-resource-type-successfully': '獲取影片類型成功',
+        'attempt-to-load-video': '嘗試載入影片',
+        'spotlight': '聚光燈效果'
     }
 };
 

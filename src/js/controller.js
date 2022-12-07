@@ -231,9 +231,7 @@ class Controller {
     }
 
     setAutoHide() {
-        if (this.mplayer.template.mplayer_sizer.classList.contains('hideControls')) {
-            this.mplayer.template.mplayer_sizer.classList.remove('hideControls')
-        }
+        this.mplayer.template.mplayer_sizer.classList.remove('hideControls')
         clearTimeout(this.autoHideTimer);
         this.autoHideTimer = setTimeout(() => {
             if (this.mplayer.template.mplayer_video.played.length && !this.mplayer.template.mplayer_video.paused) {

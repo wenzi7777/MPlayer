@@ -24,6 +24,10 @@ class SettingsPanel {
             this.initPlaybackRatesItem()
         }
 
+        // if enabled spotlight
+        if (this.mplayer.options.spotlight.enabled) {
+            this.initSpotlightItem()
+        }
     }
 
     insertBasicPanel() {
@@ -78,6 +82,34 @@ class SettingsPanel {
             // update switch status
             this.hintsSwitch.querySelector('.mplayer_switch').dataset.mplayerSwitch === 'on' ? this.hintsSwitch.querySelector('.mplayer_switch').dataset.mplayerSwitch = 'off' : this.hintsSwitch.querySelector('.mplayer_switch').dataset.mplayerSwitch = 'on'
             this.mplayer.hints.toggle()
+        })
+    }
+
+    initSpotlightItem() {
+        // switch template
+        let switch_htmlCode = switchEjsTemplate({
+            status: this.mplayer.spotlight.getStatus() ? 'on' : 'off'
+        })
+
+        // float panel item template
+        let floatPanelItem_htmlCode = floatPanelItemEjsTemplate({
+            selected: false,
+            dataset: 'data-mplayer-spotlight-item data-mplayer-panel-item',
+            contents: `${this.mplayer.translate.trans('spotlight')} ${switch_htmlCode}`
+        })
+
+
+        // inject template code
+        this.settingsPanel.insertAdjacentHTML('beforeend', floatPanelItem_htmlCode)
+
+        // get element
+        this.spotlightSwitch = document.querySelector('[data-mplayer-spotlight-item]')
+
+        // add event listener
+        this.spotlightSwitch.addEventListener('click', () => {
+            // update switch status
+            this.spotlightSwitch.querySelector('.mplayer_switch').dataset.mplayerSwitch === 'on' ? this.spotlightSwitch.querySelector('.mplayer_switch').dataset.mplayerSwitch = 'off' : this.spotlightSwitch.querySelector('.mplayer_switch').dataset.mplayerSwitch = 'on'
+            this.mplayer.spotlight.toggle()
         })
     }
 

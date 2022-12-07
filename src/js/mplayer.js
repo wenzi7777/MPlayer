@@ -15,6 +15,7 @@ import BufferingWatchDog from "./bufferingWatchDog";
 import ErrorLayer from "./errorLayer";
 import Hotkey from "./hotkey";
 import Api from "./api";
+import Spotlight from "./spotlight";
 
 class MPlayer {
     constructor(element, options) {
@@ -34,6 +35,9 @@ class MPlayer {
         this.playlist = new Playlist(this)
         if (this.options.hints.enabled) {
             this.hints = new Hints(this)
+        }
+        if(this.options.spotlight.enabled) {
+            this.spotlight = new Spotlight(this)
         }
         this.controller = new Controller(this)
         this.infoPanel = new InfoPanel(this)
@@ -407,7 +411,6 @@ class MPlayer {
         }
     }
 
-    // to be finished
     destroy() {
         this.mobileStyleWatchDog.destroy()
         this.bufferingWatchDog.destroy()
