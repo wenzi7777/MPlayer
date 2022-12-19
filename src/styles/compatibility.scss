@@ -1,0 +1,23 @@
+.mplayer_sizer.safari {
+  .mplayer_volume {
+    width: 40px;
+  }
+
+  .mplayer_volume:hover {
+    width: auto;
+  }
+
+  .mplayer_spotlight {
+    z-index: 0;
+  }
+
+  .mplayer_video {
+    z-index: 1;
+  }
+}
+
+.mplayer_sizer.firefox {
+  .mplayer_miniPlayerButton {
+    display: none;
+  }
+}

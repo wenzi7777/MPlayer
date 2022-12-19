@@ -136,10 +136,26 @@ const formatOptions = (options) => {
     return object
 }
 
+const browserDetector = () => {
+    return {
+        firefox: /firefox/i.test(window.navigator.userAgent),
+        chrome: /chrome/i.test(window.navigator.userAgent),
+        safari: /safari/i.test(window.navigator.userAgent)
+    }
+}
+
+const mobileDetector = () => {
+    return {
+        mobile: /mobile/i.test(window.navigator.userAgent)
+    }
+}
+
 export {
     formatDuration,
     hexToRGB,
     useMobileStyles,
     formatOptions,
-    hexToRGBValue
+    hexToRGBValue,
+    browserDetector,
+    mobileDetector,
 }

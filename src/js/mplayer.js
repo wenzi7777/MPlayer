@@ -16,12 +16,13 @@ import ErrorLayer from "./errorLayer";
 import Hotkey from "./hotkey";
 import Api from "./api";
 import Spotlight from "./spotlight";
+import Compatibility from "./compatibility";
 
 class MPlayer {
     constructor(element, options) {
         this.player = element
         this.options = formatOptions(options)
-        if(!this.options) {
+        if (!this.options) {
             console.error('MPlayer ERROR: video property must be provided!')
         }
         this.options.player = element
@@ -36,7 +37,7 @@ class MPlayer {
         if (this.options.hints.enabled) {
             this.hints = new Hints(this)
         }
-        if(this.options.spotlight.enabled) {
+        if (this.options.spotlight.enabled) {
             this.spotlight = new Spotlight(this)
         }
         this.controller = new Controller(this)
@@ -48,6 +49,7 @@ class MPlayer {
         this.documentClickHandler = this.documentClick.bind(this)
         this.playerClickHandler = this.playerClick.bind(this)
         this.hotKey = new Hotkey(this)
+        this.compatilbility = new Compatibility(this)
         this.initThemeColor()
         this.create()
         this.initVideo()
@@ -127,7 +129,7 @@ class MPlayer {
         switch (this.playlist.getCurrentVideoObject().type) {
             case 'hls':
                 try {
-                    if(!window.Hls) {
+                    if (!window.Hls) {
                         // error
                         this.events.trigger('mplayer:error', 'cant-find-hlsjs')
                         return;
@@ -284,22 +286,40 @@ class MPlayer {
     }
 
     enterFullscreen() {
-        this.template.mplayer_sizer.requestFullscreen()
+        if (this.template.mplayer_sizer.requestFullscreen) {
+            this.template.mplayer_sizer.requestFullscreen();
+        } else if (this.template.mplayer_sizer.webkitRequestFullscreen) { /* Safari */
+            this.template.mplayer_sizer.webkitRequestFullscreen();
+        } else if (this.template.mplayer_sizer.msRequestFullscreen) { /* IE11 */
+            this.template.mplayer_sizer.msRequestFullscreen();
+        }
         this.notice.publish(this.translate.trans('enter-fullscreen'), 3000)
         this.events.trigger('mplayer:enterFullscreen')
     }
 
     exitFullscreen() {
-        document.exitFullscreen()
+        if (document.cancelFullScreen) {
+            document.cancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+        } else if (document.webkitCancelFullscreen) {
+            document.webkitCancelFullscreen();
+        } else if (document.msCancelFullScreen) {
+            document.msCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
         this.notice.publish(this.translate.trans('exit-fullscreen'), 3000)
         this.events.trigger('mplayer:exitFullscreen')
     }
 
     toggleFullScreen() {
-        if (document.fullscreenElement === null) {
-            this.enterFullscreen()
-        } else {
+        if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.webkitCurrentFullScreenElement) {
             this.exitFullscreen()
+        } else {
+            this.enterFullscreen()
         }
     }
 
@@ -414,6 +434,8 @@ class MPlayer {
     destroy() {
         this.mobileStyleWatchDog.destroy()
         this.bufferingWatchDog.destroy()
+        this.compatilbility.destroy()
+        this.hotKey.destroy()
         document.removeEventListener('click', this.documentClickHandler)
         this.template.mplayer_sizer.removeEventListener('click', this.playerClickHandler)
     }

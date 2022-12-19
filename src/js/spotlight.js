@@ -27,6 +27,9 @@ class Spotlight {
         this.spotlightCanvas.height = 75
         this.spotlightBackgroundCanvas.width = 110
         this.spotlightBackgroundCanvas.height = 110
+        this.spotlightBackgroundCanvas.style.top = '50%';
+        this.spotlightBackgroundCanvas.style.left = '50%';
+        this.spotlightBackgroundCanvas.style.transform = 'translate(-50%, -50%)';
         this.spotlightCanvas.getContext('2d').filter = 'blur(1vw)'
         const gradient = this.spotlightBackgroundCanvas.getContext('2d').createRadialGradient(55, 55, 50, 55, 55, 5);
         gradient.addColorStop(0, `rgba(${hexToRGBValue(this.mplayer.options.spotlight.backgroundColor).r}, ${hexToRGBValue(this.mplayer.options.spotlight.backgroundColor).g}, ${hexToRGBValue(this.mplayer.options.spotlight.backgroundColor).b}, 1)`);
@@ -41,6 +44,8 @@ class Spotlight {
     active() {
         this.drawingTimer = setInterval(() => {
             this.spotlightCanvas.getContext('2d').drawImage(this.mplayer.template.mplayer_video, 0, 0, 110, 75);
+                this.spotlightBackgroundCanvas.style.width = this.spotlightContainer.clientWidth * 1.1 + 'px';
+                this.spotlightBackgroundCanvas.style.height = this.spotlightContainer.clientHeight * 1.1 + 'px';
         }, 100);
     }
 
