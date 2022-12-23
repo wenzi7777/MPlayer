@@ -34,14 +34,18 @@ class Compatibility {
         // fullscreenchange event will not be fired on safari
         // firefox, chrome: OK
         // safari: BAD
-        this.mplayer.template.mplayer_fullscreenButton.addEventListener('click', this.safariFullscreenIconHandler)
+        if(browserDetector().safari) {
+            this.mplayer.template.mplayer_fullscreenButton.addEventListener('click', this.safariFullscreenIconHandler)
+        }
     }
 
     resolvePiPInFirefox() {
         // requestpictureinpicture API will not work when using firefox
         // chrome, safari: OK
         // firefox: BAD
-        this.mplayer.template.mplayer_sizer.classList.add('firefox')
+        if(browserDetector().firefox) {
+            this.mplayer.template.mplayer_sizer.classList.add('firefox')
+        }
     }
 
     manualToggleFullscreenIcon() {
@@ -53,7 +57,9 @@ class Compatibility {
     }
 
     destroy() {
-        this.mplayer.template.mplayer_fullscreenButton.removeEventListener('click', this.safariFullscreenIconHandler)
+        if(browserDetector().safari) {
+            this.mplayer.template.mplayer_fullscreenButton.removeEventListener('click', this.safariFullscreenIconHandler)
+        }
     }
 
 }

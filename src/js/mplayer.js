@@ -270,11 +270,15 @@ class MPlayer {
     enterPiP() {
         this.template.mplayer_video.requestPictureInPicture()
         this.events.trigger('mplayer:enterPiP')
+        if (!this.mplayer.infoLayer.existed()) {
+            this.mplayer.infoLayer.staticLayer('pip')
+        }
     }
 
     exitPiP() {
         document.exitPictureInPicture()
         this.events.trigger('mplayer:exitPiP')
+        this.mplayer.infoLayer.destroy()
     }
 
     toggleMiniPlayer() {
@@ -438,6 +442,7 @@ class MPlayer {
         this.hotKey.destroy()
         document.removeEventListener('click', this.documentClickHandler)
         this.template.mplayer_sizer.removeEventListener('click', this.playerClickHandler)
+        this.options.player.removeChild(this.template.mplayer_sizer)
     }
 
 }

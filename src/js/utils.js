@@ -137,10 +137,14 @@ const formatOptions = (options) => {
 }
 
 const browserDetector = () => {
+    // useragents on my mac
+    // firefox: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:108.0) Gecko/20100101 Firefox/108.0"
+    // chrome: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+    // safari: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15"
     return {
         firefox: /firefox/i.test(window.navigator.userAgent),
-        chrome: /chrome/i.test(window.navigator.userAgent),
-        safari: /safari/i.test(window.navigator.userAgent)
+        chrome: /chrome/i.test(window.navigator.userAgent) && /safari/i.test(window.navigator.userAgent),
+        safari: /safari/i.test(window.navigator.userAgent) && !(/chrome/i.test(window.navigator.userAgent))
     }
 }
 
