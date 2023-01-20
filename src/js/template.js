@@ -1,8 +1,4 @@
 import mplayerEjsTemplate from '../template/mplayer.ejs'
-import infoLayerEjsTemplate from '../template/infoLayer/infoLayer.ejs'
-import infoTitleEjsTemplate from '../template/infoLayer/infoTitle.ejs'
-import infoContentsEjsTemplate from '../template/infoLayer/infoContents.ejs'
-import infoTagEjsTemplate from '../template/infoLayer/infoTag.ejs'
 
 class Template {
     constructor(options) {

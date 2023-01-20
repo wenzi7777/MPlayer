@@ -10,7 +10,6 @@ import InfoPanel from "./infoPanel";
 import {formatOptions, hexToRGB} from "./utils";
 import MobileStyleWatchDog from "./mobileStyleWatchDog";
 import Notice from "./notice";
-import LoadingWatchDog from "./bufferingWatchDog";
 import BufferingWatchDog from "./bufferingWatchDog";
 import ErrorLayer from "./errorLayer";
 import Hotkey from "./hotkey";
@@ -34,12 +33,8 @@ class MPlayer {
         this.infoLayer = new InfoLayer(this)
         this.notice = new Notice(this)
         this.playlist = new Playlist(this)
-        if (this.options.hints.enabled) {
-            this.hints = new Hints(this)
-        }
-        if (this.options.spotlight.enabled) {
-            this.spotlight = new Spotlight(this)
-        }
+        this.hints = new Hints(this)
+        this.spotlight = new Spotlight(this)
         this.controller = new Controller(this)
         this.infoPanel = new InfoPanel(this)
         this.contextMenu = new ContextMenu(this)
@@ -50,6 +45,7 @@ class MPlayer {
         this.playerClickHandler = this.playerClick.bind(this)
         this.hotKey = new Hotkey(this)
         this.compatilbility = new Compatibility(this)
+        this.Apis = new Api(this)
         this.initThemeColor()
         this.create()
         this.initVideo()
@@ -270,15 +266,15 @@ class MPlayer {
     enterPiP() {
         this.template.mplayer_video.requestPictureInPicture()
         this.events.trigger('mplayer:enterPiP')
-        if (!this.mplayer.infoLayer.existed()) {
-            this.mplayer.infoLayer.staticLayer('pip')
+        if (!this.infoLayer.existed()) {
+            this.infoLayer.staticLayer('pip')
         }
     }
 
     exitPiP() {
         document.exitPictureInPicture()
         this.events.trigger('mplayer:exitPiP')
-        this.mplayer.infoLayer.destroy()
+        this.infoLayer.destroy()
     }
 
     toggleMiniPlayer() {

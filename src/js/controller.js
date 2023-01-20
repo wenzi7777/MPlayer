@@ -77,6 +77,8 @@ class Controller {
     reload() {
         this.destroy()
 
+        this.initAutoHide()
+
         // if used subtitles tool
         if (this.mplayer.options.tools.includes('subtitles')) {
             this.initSubtitles()

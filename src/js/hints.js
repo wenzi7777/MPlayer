@@ -10,6 +10,9 @@ class Hints {
     }
 
     init() {
+        if(!this.mplayer.options.enabled) {
+            return
+        }
         let hintsLayer_htmlCode = hintsLayerEjsTemplate()
         this.mplayer.template.mplayer_sizer.insertAdjacentHTML('afterbegin', hintsLayer_htmlCode)
         this.hintsLayer = document.querySelector('.mplayer_hintsLayer')

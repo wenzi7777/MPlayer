@@ -9,6 +9,9 @@ class Spotlight {
     }
 
     init() {
+        if(!this.mplayer.options.spotlight.enabled){
+            return
+        }
         this.insertHtml()
         this.show()
         this.setCanvasStyle()

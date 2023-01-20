@@ -12,6 +12,11 @@ class InfoPanel {
     }
 
     mount() {
+
+        if (this.mplayer.options.infoPanel.length <= 0) {
+            return
+        }
+
         // basic dialog
         let basicDialog_htmlCode = basicDialogEjsTemplate({
             dataset: 'data-mplayer-info-panel'
@@ -106,6 +111,9 @@ class InfoPanel {
     }
 
     updateAll() {
+        if (this.mplayer.options.infoPanel.length <= 0) {
+            return
+        }
         if (this.mplayer.options.infoPanel.includes('basicVideoInfo')) {
             this.updateBasicVideoInfo()
         }
@@ -182,6 +190,9 @@ class InfoPanel {
     }
 
     toggle() {
+        if (this.mplayer.options.infoPanel.length <= 0) {
+            return
+        }
         if (this.infoPanel) {
             this.destroy()
         } else {

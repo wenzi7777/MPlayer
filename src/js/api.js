@@ -120,14 +120,14 @@ class Api {
      * @description Get current video buffered time
      */
     buffered() {
-        this.mplayer.getBuffered()
+        return this.mplayer.getBuffered()
     }
 
     /**
      * @description Get current video currentTime
      */
     currentTime() {
-        this.mplayer.getCurrentTime()
+        return this.mplayer.getCurrentTime()
     }
 
     /**
