@@ -16,13 +16,13 @@ module.exports = {
         libraryExport: 'default',
         umdNamedDefine: true
     },
-    devtool: 'eval-cheap-module-source-map',
+    devtool: 'eval-source-map',
     devServer: {
         static: {
-            directory: path.join(__dirname, '__test'),
+            directory: path.join(__dirname, 'dist'),
         },
         compress: true,
-        port: 1111,
+        port: 2739,
     },
     module: {
         rules: [

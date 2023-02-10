@@ -1,5 +1,5 @@
 
-# ![MPlayer](./docs/public/logo.png)
+# ![MPlayer](./images/logo.png)
 
 MPlayer is a powerful, colorful and lovely html5 video player.
 
@@ -7,7 +7,7 @@ MPlayer is a powerful, colorful and lovely html5 video player.
 [![npm](https://img.shields.io/npm/l/@wenzi7777/mplayer)](https://github.com/wenzi7777/MPlayer/blob/master/LICENSE)
 [![](https://data.jsdelivr.com/v1/package/npm/@wenzi7777/mplayer/badge?style=rounded)](https://cdn.jsdelivr.net/npm/@wenzi7777/mplayer@latest/dist/mplayer.bundle.min.js)
 
-# ![Preview](./docs/public/mplayer.png)
+# ![Preview](./images/mplayer.png)
 
 ## Try it! 
 
@@ -88,5 +88,5 @@ npm install --save @wenzi7777/mplayer
 ```
 
 ## License
-MPlayer is released under Mozilla Public License 2.0
+MPlayer is released under the Mozilla Public License 2.0
 

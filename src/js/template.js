@@ -1,32 +1,32 @@
 import mplayerEjsTemplate from '../template/mplayer.ejs'
 
 class Template {
-    constructor(options) {
-        this.options = options
+    constructor(mplayer) {
+        this.mplayer = mplayer
     }
 
     htmlCode() {
         this.ejsRenderData = {
-            lang: this.options.lang,
-            playerMode: this.options.playerMode,
-            autoplay: this.options.autoplay,
-            theme: this.options.theme,
-            loop: this.options.loop,
-            tools: this.options.tools,
-            hotkey: this.options.hotkey,
-            preload: this.options.preload,
-            volume: this.options.volume,
-            playbackRates: this.options.playbackRates,
-            floatImage: this.options.floatImage,
-            videos: this.options.video,
-            subtitle: this.options.subtitle
+            lang: this.mplayer.options.lang,
+            playerMode: this.mplayer.options.playerMode,
+            autoplay: this.mplayer.options.autoplay,
+            theme: this.mplayer.options.theme,
+            loop: this.mplayer.options.loop,
+            tools: this.mplayer.options.tools,
+            hotkey: this.mplayer.options.hotkey,
+            preload: this.mplayer.options.preload,
+            volume: this.mplayer.options.volume,
+            playbackRates: this.mplayer.options.playbackRates,
+            floatImage: this.mplayer.options.floatImage,
+            videos: this.mplayer.options.video,
+            subtitle: this.mplayer.options.subtitle
         }
 
         return mplayerEjsTemplate(this.ejsRenderData)
     }
 
     init() {
-        this.options.player.innerHTML = this.htmlCode()
+        this.mplayer.options.player.innerHTML = this.htmlCode()
         this.getAllReachableElements()
     }
 
@@ -55,6 +55,7 @@ class Template {
         this.getElement('mplayer_fullscreenButton', '.mplayer_fullscreenButton')
         this.getElement('mplayer_controlsContainer', '.mplayer_controlsContainer')
         this.getElement('mplayer_noticeList', '.mplayer_noticeList')
+        this.getElement('mplayer_timeline', '.mplayer_timeline')
     }
 
     getElement(elementName, elementQueryString) {

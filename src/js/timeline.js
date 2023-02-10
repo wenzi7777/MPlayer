@@ -31,7 +31,7 @@ class Timeline {
     }
 
     mount() {
-        let timeline_htmlCode = timelineEjsTemplate()
+        let timeline_htmlCode = timelineEjsTemplate(this.mplayer.options)
         this.mplayer.template.mplayer_controlsContainer.insertAdjacentHTML('afterbegin', timeline_htmlCode)
         this.mplayer_timelineContainer = document.querySelector('.mplayer_timelineContainer')
         this.mplayer_previewImage = document.querySelector('.mplayer_previewImage')

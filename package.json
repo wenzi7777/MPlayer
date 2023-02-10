@@ -1,6 +1,6 @@
 {
   "name": "@wenzi7777/mplayer",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "What a colorful, powerful and lovely html5 video player!!",
   "main": "dist/mplayer.bundle.min.js",
   "scripts": {
@@ -14,10 +14,10 @@
   "author": "Nick Hsu",
   "license": "MPL-2.0",
   "dependencies": {
-    "ejs": "^3.1.8",
-    "git-revision-webpack-plugin": "^5.0.0"
   },
   "devDependencies": {
+    "ejs": "^3.1.8",
+    "git-revision-webpack-plugin": "^5.0.0",
     "@babel/core": "^7.20.2",
     "@babel/preset-env": "^7.19.4",
     "autoprefixer": "^10.4.13",

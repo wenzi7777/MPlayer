@@ -10,7 +10,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'mplayer.bundle.min.js',
+        filename: `mplayer.bundle.min.js`,
         library: '[name]',
         libraryTarget: 'umd',
         libraryExport: 'default',
@@ -51,7 +51,7 @@ module.exports = {
                 test: /\.(png|jpg)$/,
                 loader: 'url-loader',
                 options: {
-                    limit: 40000,
+                    limit: 39277,
                 },
             },
             {

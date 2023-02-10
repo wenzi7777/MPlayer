@@ -16,6 +16,7 @@ import Hotkey from "./hotkey";
 import Api from "./api";
 import Spotlight from "./spotlight";
 import Compatibility from "./compatibility";
+import Theme from "./theme";
 
 class MPlayer {
     constructor(element, options) {
@@ -26,7 +27,7 @@ class MPlayer {
         }
         this.options.player = element
         this.plugins = {}
-        this.template = new Template(this.options)
+        this.template = new Template(this)
         this.events = new Events()
         this.translate = new Translation(options)
         this.template.init()
@@ -46,7 +47,7 @@ class MPlayer {
         this.hotKey = new Hotkey(this)
         this.compatilbility = new Compatibility(this)
         this.Apis = new Api(this)
-        this.initThemeColor()
+        this.theme = new Theme(this)
         this.create()
         this.initVideo()
     }
@@ -82,6 +83,7 @@ class MPlayer {
             this.controller.reload()
             this.hints.reload()
             this.playlist.refreshPanel()
+            this.theme.reload()
         })
 
         this.on('mplayer:error', (e) => {
@@ -357,18 +359,6 @@ class MPlayer {
 
     toggleInfoPanel() {
         this.infoPanel.toggle()
-    }
-
-    initThemeColor() {
-        if (!this.options.theme) {
-            return;
-        }
-        if (this.options.theme.indexOf('rgb') !== -1) {
-            // error
-            return;
-        }
-        this.template.mplayer_sizer.style.setProperty('--themeColor', this.options.theme)
-        this.template.mplayer_sizer.style.setProperty('--lightThemeColor', hexToRGB(this.options.theme, .9))
     }
 
     toggleMobile() {

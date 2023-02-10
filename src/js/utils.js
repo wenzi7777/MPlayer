@@ -63,7 +63,10 @@ const formatOptions = (options) => {
             enabled: false,
             backgroundColor: '#FFFFFF'
         },
-        theme: options.theme || '#39c5bb',
+        theme: {
+            main: options.theme || '#39c5bb',
+            light: options.theme ? hexToRGB(options.theme, .9) : hexToRGB('#39c5bb', .9)
+        },
         tools: options.tools || ['timeline', 'playPause', 'volumeControl', 'durationViewer', 'screenshot', 'playerSettings', 'enablePlaylist', 'subtitles', 'miniPlayer', 'theaterMode', 'fullscreen'],
         hotkey: options.hotkey || true,
         preload: options.preload || true,
