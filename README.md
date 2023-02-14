@@ -3,6 +3,7 @@
 
 MPlayer is a powerful, colorful and lovely html5 video player.
 
+![GitHub file size in bytes](https://img.shields.io/github/size/wenzi7777/mplayer/dist/mplayer.bundle.min.js.gz?label=MPlayer%20gzipped)
 [![npm](https://img.shields.io/npm/dt/@wenzi7777/mplayer)](https://www.npmjs.com/package/@wenzi7777/mplayer)
 [![npm](https://img.shields.io/npm/l/@wenzi7777/mplayer)](https://github.com/wenzi7777/MPlayer/blob/master/LICENSE)
 [![](https://data.jsdelivr.com/v1/package/npm/@wenzi7777/mplayer/badge?style=rounded)](https://cdn.jsdelivr.net/npm/@wenzi7777/mplayer@latest/dist/mplayer.bundle.min.js)
