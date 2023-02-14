@@ -1,7 +1,8 @@
 const path = require('path')
-const webpack = require("webpack");
-const {GitRevisionPlugin} = require('git-revision-webpack-plugin');
-const gitRevisionPlugin = new GitRevisionPlugin();
+const webpack = require("webpack")
+const {GitRevisionPlugin} = require('git-revision-webpack-plugin')
+const gitRevisionPlugin = new GitRevisionPlugin()
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
     mode: 'production',
@@ -16,7 +17,14 @@ module.exports = {
         libraryExport: 'default',
         umdNamedDefine: true
     },
-    devtool: 'source-map',
+    // devtool: 'source-map',
+    optimization: {
+        minimizer: [
+            new TerserPlugin({
+                extractComments: false,
+            }),
+        ],
+    },
     module: {
         rules: [
             {
@@ -40,7 +48,7 @@ module.exports = {
                         loader: "postcss-loader",
                         options: {
                             postcssOptions: {
-                                plugins: [require("autoprefixer")({broswers: ['last 5 versions']})]
+                                plugins: [require("autoprefixer")()]
                             }
                         }
                     },
@@ -76,6 +84,9 @@ module.exports = {
         new webpack.DefinePlugin({
             MPLAYER_VERSION: `"${require('./package.json').version}"`,
             GIT_HASH: JSON.stringify(gitRevisionPlugin.version()),
+        }),
+        new webpack.optimize.LimitChunkCountPlugin({
+            maxChunks: 1,
         }),
     ]
 };
