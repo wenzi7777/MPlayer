@@ -3,6 +3,7 @@ const webpack = require("webpack")
 const {GitRevisionPlugin} = require('git-revision-webpack-plugin')
 const gitRevisionPlugin = new GitRevisionPlugin()
 const TerserPlugin = require('terser-webpack-plugin')
+const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
     mode: 'production',
@@ -88,5 +89,6 @@ module.exports = {
         new webpack.optimize.LimitChunkCountPlugin({
             maxChunks: 1,
         }),
+        new CompressionPlugin()
     ]
 };
