@@ -1,14 +1,11 @@
 .mplayer_sizer {
   position: relative;
-  width: 90%;
-  max-width: 1000px;
   display: flex;
   justify-content: center;
   margin-inline: auto;
   background-color: black;
   font-family: sans-serif;
   --blur: .15vw;
-  height: 100%;
 }
 
 .mplayer_sizer.hideControls {
