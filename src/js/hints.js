@@ -10,7 +10,7 @@ class Hints {
     }
 
     init() {
-        if(!this.mplayer.options.enabled) {
+        if(!this.mplayer.options.hints.enabled) {
             return
         }
         let hintsLayer_htmlCode = hintsLayerEjsTemplate()
