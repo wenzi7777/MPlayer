@@ -13,6 +13,9 @@ class Controller {
     }
 
     init() {
+        // set default volume
+        this.setVolume(this.mplayer.options.volume)
+
         // if used timeline tool
         if (this.mplayer.options.tools.includes('timeline')) {
             this.initTimeline()
@@ -240,6 +243,10 @@ class Controller {
                 this.mplayer.template.mplayer_sizer.classList.add('hideControls')
             }
         }, 3000);
+    }
+
+    setVolume(volume) {
+        this.mplayer.template.mplayer_video.volume = volume
     }
 
     destroy() {

@@ -53,6 +53,14 @@ class Api {
     }
 
     /**
+     * @description Set video volume
+     * @param volume
+     */
+    setVolume(volume) {
+        this.mplayer.controller.setVolume(volume)
+    }
+
+    /**
      * @description Skip video by certain time
      * @param time
      */
@@ -106,14 +114,14 @@ class Api {
      * @description Get current video resolution
      */
     videoResolution() {
-        this.mplayer.getVideoResolution()
+        return this.mplayer.getVideoResolution()
     }
 
     /**
      * @description Get current video url
      */
     videoURL() {
-        this.mplayer.getVideoURL()
+        return this.mplayer.getVideoURL()
     }
 
     /**
