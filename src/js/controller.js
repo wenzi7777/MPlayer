@@ -14,7 +14,6 @@ class Controller {
 
     init() {
         // set default volume
-        console.log(this.mplayer.options.volume)
         this.setVolume(this.mplayer.options.volume)
 
         // if used timeline tool
@@ -157,6 +156,7 @@ class Controller {
                 this.mplayer.template.mplayer_sizer.dataset.mplayerVolumeLevel = 'low'
             }
         }
+        this.mplayer.template.mplayer_volumeSlider.value = this.mplayer.template.mplayer_video.volume
     }
 
     initDurationViewer() {
@@ -247,7 +247,12 @@ class Controller {
     }
 
     setVolume(volume) {
-        this.mplayer.template.mplayer_video.volume = volume
+        this.mplayer.template.mplayer_video.volume = parseFloat(volume)
+        if(volume === 0) {
+            this.mplayer.mute()
+        }else {
+            this.mplayer.unmute()
+        }
     }
 
     destroy() {
