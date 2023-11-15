@@ -14,6 +14,7 @@ class Controller {
 
     init() {
         // set default volume
+        console.log(this.mplayer.options.volume)
         this.setVolume(this.mplayer.options.volume)
 
         // if used timeline tool

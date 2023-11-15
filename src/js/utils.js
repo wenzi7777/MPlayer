@@ -70,7 +70,7 @@ const formatOptions = (options) => {
         tools: options.tools || ['timeline', 'playPause', 'volumeControl', 'durationViewer', 'screenshot', 'playerSettings', 'enablePlaylist', 'subtitles', 'miniPlayer', 'theaterMode', 'fullscreen'],
         hotkey: options.hotkey || true,
         preload: options.preload || true,
-        volume: options.volume || 1,
+        volume: options.volume == null ? 1 : options.volume,
         playbackRates: options.playbackRates || [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2],
         index: options.index || 0,
         infoPanel: options.infoPanel || ['basicVideoInfo', 'playerFPS', 'videoURL', 'connectionStatus', 'date', 'playerInfo'],

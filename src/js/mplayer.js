@@ -290,9 +290,9 @@ class MPlayer {
     enterFullscreen() {
         if (this.template.mplayer_sizer.requestFullscreen) {
             this.template.mplayer_sizer.requestFullscreen();
-        } else if (this.template.mplayer_sizer.webkitRequestFullscreen) { /* Safari */
+        } else if (this.template.mplayer_sizer.webkitRequestFullscreen) {
             this.template.mplayer_sizer.webkitRequestFullscreen();
-        } else if (this.template.mplayer_sizer.msRequestFullscreen) { /* IE11 */
+        } else if (this.template.mplayer_sizer.msRequestFullscreen) {
             this.template.mplayer_sizer.msRequestFullscreen();
         }
         this.notice.publish(this.translate.trans('enter-fullscreen'), 3000)
